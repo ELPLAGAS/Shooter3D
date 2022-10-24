@@ -51,7 +51,7 @@ public class EnemyController : MonoBehaviour, IDamage
     {
         particle.Play();
         yield return wait;
-       
+        GameManager.instance.AddEnemyKill();
         Destroy(gameObject);
     }
 
