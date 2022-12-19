@@ -61,7 +61,7 @@ public class PlayerActions : MonoBehaviour, IDamage
     public void DoDamage(int vld, bool isPlayer)
     {
         Debug.Log("He Recibido Daño = " + vld + "isPlayer = " +isPlayer);
-        if (isPlayer);
+        if(isPlayer);
         else
         {
             if (saveTime <= 0)

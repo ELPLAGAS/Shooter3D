@@ -51,6 +51,20 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Has Ganado");
             staticValues.winner = 1;
+            if(PlayerPrefs.HasKey("record") == true)
+            {
+                float record = PlayerPrefs.GetFloat("record");
+                if(timer < record)
+                {
+                    PlayerPrefs.SetFloat("record", timer);
+                }
+            }
+            else
+            {
+                PlayerPrefs.SetFloat("record", timer);
+            }
+            PlayerPrefs.Save();
+
         }
         else
         {

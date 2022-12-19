@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class MenuScript : MonoBehaviour
 {
     public Text txtFin;
+    public Text txtRecord;
 
     private void Start()
     {
@@ -29,7 +30,18 @@ public class MenuScript : MonoBehaviour
         {
             txtFin.enabled = false;
         }
+        
+        if (PlayerPrefs.HasKey("record"))
+        {
+            txtRecord.text = "RECORD: " + PlayerPrefs.GetFloat("record").ToString("n2");
+        }
+        else
+        {
+            txtRecord.text=" Record: No Time";
+        }
+
     }
+    
 
 
     public void ButtonPlay()
